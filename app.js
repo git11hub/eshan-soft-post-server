@@ -28,6 +28,6 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log("server is running on", PORT)
 })
