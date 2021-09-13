@@ -2,7 +2,7 @@ const express = require('express')
 var cors = require('cors')
 const app = express()
 const mongoose = require('mongoose')
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 const { MONGOURI } = require('./keys')
 
 app.use(cors())
@@ -28,6 +28,6 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
 
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
     console.log("server is running on", PORT)
 })
